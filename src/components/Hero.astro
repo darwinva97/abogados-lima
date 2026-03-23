@@ -1,0 +1,176 @@
+---
+---
+
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-subtitle">Estudio Jurídico en Lima, Perú</p>
+    <h1 class="hero-title">Defensa Legal con<br/>Excelencia y Compromiso</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-description">
+      Más de 20 años brindando asesoría legal integral a empresas y personas naturales.
+      Su tranquilidad es nuestra prioridad.
+    </p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn btn-primary">Agendar Consulta</a>
+      <a href="#areas" class="btn btn-outline">Nuestras Áreas</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-number">500+</span>
+        <span class="stat-label">Casos Resueltos</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">20+</span>
+        <span class="stat-label">Años de Experiencia</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">98%</span>
+        <span class="stat-label">Clientes Satisfechos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      linear-gradient(135deg, rgba(13, 17, 23, 0.92), rgba(26, 35, 50, 0.88)),
+      url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=80') center/cover no-repeat;
+    color: var(--color-white);
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to top, var(--color-white), transparent);
+  }
+
+  .hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--color-gold);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-divider {
+    width: 60px;
+    height: 2px;
+    background: var(--color-gold);
+    margin: 0 auto 1.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.9rem 2.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: var(--color-gold);
+    color: var(--color-primary);
+    border: 2px solid var(--color-gold);
+  }
+
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--color-gold);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--color-white);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-number {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-gold);
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0.25rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-stats {
+      gap: 2rem;
+    }
+
+    .stat-number {
+      font-size: 1.6rem;
+    }
+  }
+</style>

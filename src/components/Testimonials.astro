@@ -1,0 +1,164 @@
+---
+const testimonials = [
+  {
+    quote: 'El Dr. Mendoza y su equipo resolvieron nuestro caso corporativo con una eficiencia excepcional. Su conocimiento del marco legal peruano es impresionante.',
+    name: 'Jorge Castañeda',
+    role: 'Gerente General, Inversiones del Pacífico S.A.',
+  },
+  {
+    quote: 'Gracias a la Dra. Herrera logramos una resolución favorable en un caso penal complejo. Su dedicación y profesionalismo marcaron la diferencia.',
+    name: 'Ana María Quispe',
+    role: 'Empresaria',
+  },
+  {
+    quote: 'Llevamos más de 10 años confiando en Mendoza & Asociados para toda nuestra asesoría laboral. Son un aliado estratégico indispensable para nuestra empresa.',
+    name: 'Fernando Rivas',
+    role: 'Director de RRHH, Grupo Industrial Lima',
+  },
+];
+---
+
+<section class="testimonials" id="testimonios">
+  <div class="testimonials-bg"></div>
+  <div class="container">
+    <div class="testimonials-header">
+      <p class="section-subtitle">Testimonios</p>
+      <h2 class="section-title">Lo que Dicen Nuestros Clientes</h2>
+      <div class="section-divider center"></div>
+    </div>
+    <div class="testimonials-grid">
+      {testimonials.map(t => (
+        <div class="testimonial-card">
+          <div class="quote-mark">"</div>
+          <p class="testimonial-quote">{t.quote}</p>
+          <div class="testimonial-author">
+            <div class="author-line"></div>
+            <div>
+              <p class="author-name">{t.name}</p>
+              <p class="author-role">{t.role}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    padding: 7rem 2rem;
+    background: var(--color-primary);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonials-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(circle at 20% 80%, rgba(201, 169, 110, 0.05), transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(201, 169, 110, 0.05), transparent 50%);
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--color-gold);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    color: var(--color-white);
+    margin-bottom: 1rem;
+  }
+
+  .section-divider {
+    width: 50px;
+    height: 2px;
+    background: var(--color-gold);
+  }
+
+  .section-divider.center {
+    margin: 0 auto;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .testimonial-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(201, 169, 110, 0.15);
+    padding: 2.5rem 2rem;
+    position: relative;
+  }
+
+  .quote-mark {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    color: var(--color-gold);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: -1rem;
+  }
+
+  .testimonial-quote {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.92rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .author-line {
+    width: 30px;
+    height: 1px;
+    background: var(--color-gold);
+  }
+
+  .author-name {
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .author-role {
+    color: var(--color-gold);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.15rem;
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

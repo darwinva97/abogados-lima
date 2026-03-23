@@ -1,0 +1,191 @@
+---
+const areas = [
+  {
+    icon: '🏛',
+    title: 'Derecho Civil',
+    description: 'Contratos, obligaciones, responsabilidad civil, sucesiones y derecho de familia. Protegemos sus derechos patrimoniales y personales.',
+  },
+  {
+    icon: '⚖',
+    title: 'Derecho Penal',
+    description: 'Defensa penal integral, litigios penales, delitos económicos y asesoría preventiva para personas naturales y jurídicas.',
+  },
+  {
+    icon: '🏢',
+    title: 'Derecho Corporativo',
+    description: 'Constitución de empresas, fusiones y adquisiciones, gobierno corporativo y cumplimiento normativo empresarial.',
+  },
+  {
+    icon: '👷',
+    title: 'Derecho Laboral',
+    description: 'Asesoría en relaciones laborales, negociaciones colectivas, despidos y seguridad social para empleadores y trabajadores.',
+  },
+  {
+    icon: '🏗',
+    title: 'Derecho Inmobiliario',
+    description: 'Compraventa de inmuebles, saneamiento de propiedades, registros públicos y resolución de conflictos inmobiliarios.',
+  },
+  {
+    icon: '📋',
+    title: 'Derecho Tributario',
+    description: 'Planificación fiscal, defensa ante SUNAT, recursos impugnatorios y optimización de la carga tributaria.',
+  },
+];
+---
+
+<section class="areas" id="areas">
+  <div class="container">
+    <div class="areas-header">
+      <p class="section-subtitle">Áreas de Práctica</p>
+      <h2 class="section-title">Soluciones Legales Integrales</h2>
+      <div class="section-divider center"></div>
+      <p class="section-description">
+        Ofrecemos asesoría especializada en diversas ramas del derecho,
+        adaptándonos a las necesidades específicas de cada cliente.
+      </p>
+    </div>
+    <div class="areas-grid">
+      {areas.map(area => (
+        <div class="area-card">
+          <span class="area-icon">{area.icon}</span>
+          <h3 class="area-title">{area.title}</h3>
+          <p class="area-description">{area.description}</p>
+          <a href="#contacto" class="area-link">Consultar →</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .areas {
+    padding: 7rem 2rem;
+    background: var(--color-light);
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .areas-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--color-gold);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .section-divider {
+    width: 50px;
+    height: 2px;
+    background: var(--color-gold);
+    margin-bottom: 1.5rem;
+  }
+
+  .section-divider.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-description {
+    color: var(--color-text-light);
+    max-width: 550px;
+    margin: 0 auto;
+    font-size: 0.95rem;
+  }
+
+  .areas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .area-card {
+    background: var(--color-white);
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(201, 169, 110, 0.15);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .area-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--color-gold);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+
+  .area-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .area-card:hover {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
+  }
+
+  .area-icon {
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 1.25rem;
+    filter: grayscale(0.3);
+  }
+
+  .area-title {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .area-description {
+    font-size: 0.88rem;
+    color: var(--color-text-light);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .area-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+  }
+
+  .area-link:hover {
+    color: var(--color-secondary);
+  }
+
+  @media (max-width: 768px) {
+    .areas-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .areas-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

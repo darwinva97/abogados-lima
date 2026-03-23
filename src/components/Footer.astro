@@ -1,0 +1,165 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-icon">⚖</span>
+          <div>
+            <span class="logo-name">Mendoza & Asociados</span>
+            <span class="logo-sub">Abogados</span>
+          </div>
+        </div>
+        <p class="footer-desc">
+          Estudio jurídico comprometido con la excelencia legal y la defensa
+          de los derechos de nuestros clientes en Lima, Perú.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#areas">Áreas de Práctica</a></li>
+          <li><a href="#equipo">Equipo</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Áreas Legales</h4>
+        <ul>
+          <li><a href="#areas">Derecho Civil</a></li>
+          <li><a href="#areas">Derecho Penal</a></li>
+          <li><a href="#areas">Derecho Corporativo</a></li>
+          <li><a href="#areas">Derecho Laboral</a></li>
+          <li><a href="#areas">Derecho Tributario</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <p>Av. Javier Prado Este 4600, Of. 1201</p>
+        <p>Santiago de Surco, Lima</p>
+        <p style="margin-top: 0.5rem;">(01) 625-7800</p>
+        <p>consultas@mendozaasociados.pe</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} Mendoza & Asociados. Todos los derechos reservados.</p>
+      <p class="footer-colegio">Miembros del Colegio de Abogados de Lima</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-dark);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 4rem 2rem 0;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: var(--color-white);
+  }
+
+  .logo-icon {
+    font-size: 1.8rem;
+  }
+
+  .logo-name {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: block;
+  }
+
+  .logo-sub {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--color-gold);
+  }
+
+  .footer-desc {
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+
+  .footer-links h4,
+  .footer-contact h4 {
+    font-family: var(--font-heading);
+    color: var(--color-white);
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-links a {
+    font-size: 0.85rem;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover {
+    color: var(--color-gold);
+  }
+
+  .footer-contact p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    font-size: 0.78rem;
+  }
+
+  .footer-colegio {
+    color: var(--color-gold);
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+  }
+</style>

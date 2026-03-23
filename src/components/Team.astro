@@ -1,0 +1,178 @@
+---
+const team = [
+  {
+    name: 'Dr. Carlos Mendoza',
+    role: 'Socio Fundador',
+    specialty: 'Derecho Corporativo y Civil',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80',
+  },
+  {
+    name: 'Dra. Patricia Herrera',
+    role: 'Socia',
+    specialty: 'Derecho Penal y Procesal',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
+  },
+  {
+    name: 'Dr. Roberto Álvarez',
+    role: 'Asociado Senior',
+    specialty: 'Derecho Laboral y Tributario',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
+  },
+  {
+    name: 'Dra. María Fernanda López',
+    role: 'Asociada',
+    specialty: 'Derecho Inmobiliario y Registral',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80',
+  },
+];
+---
+
+<section class="team" id="equipo">
+  <div class="container">
+    <div class="team-header">
+      <p class="section-subtitle">Nuestro Equipo</p>
+      <h2 class="section-title">Profesionales de Excelencia</h2>
+      <div class="section-divider center"></div>
+    </div>
+    <div class="team-grid">
+      {team.map(member => (
+        <div class="team-card">
+          <div class="team-image">
+            <img src={member.image} alt={member.name} />
+            <div class="team-overlay">
+              <p class="team-specialty">{member.specialty}</p>
+            </div>
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">{member.name}</h3>
+            <p class="team-role">{member.role}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .team {
+    padding: 7rem 2rem;
+    background: var(--color-white);
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .team-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--color-gold);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .section-divider {
+    width: 50px;
+    height: 2px;
+    background: var(--color-gold);
+  }
+
+  .section-divider.center {
+    margin: 0 auto;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .team-card {
+    text-align: center;
+  }
+
+  .team-image {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+    aspect-ratio: 3/4;
+  }
+
+  .team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.3);
+    transition: all 0.4s;
+  }
+
+  .team-card:hover .team-image img {
+    filter: grayscale(0);
+    transform: scale(1.05);
+  }
+
+  .team-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(26, 35, 50, 0.9), transparent);
+    padding: 2rem 1rem 1rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .team-card:hover .team-overlay {
+    opacity: 1;
+  }
+
+  .team-specialty {
+    color: var(--color-gold);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+
+  .team-name {
+    font-size: 1.05rem;
+    color: var(--color-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .team-role {
+    font-size: 0.8rem;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .team-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
+</style>
